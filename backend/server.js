@@ -3,12 +3,15 @@ import dotenv from 'dotenv';
 import authRouter from './routes/auth.route.js';
 import connectToMongoDB from './db/connectDB.js';
 
-const app = express();
 dotenv.config();
 
-
+const app = express();
 const PORT = process.env.PORT || 5000;
 
+//middlewares
+app.use(express.json());
+
+// routes
 app.use("/api/auth",authRouter);
 
 
