@@ -53,6 +53,8 @@ const useSignup = () => {
 
 export default useSignup;
 
+
+// For frontend validation 
 function handleInputErrors({
   fullName,
   username,

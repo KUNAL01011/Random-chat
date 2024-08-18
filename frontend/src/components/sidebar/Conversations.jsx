@@ -1,13 +1,14 @@
 import useGetConversations from "../../hooks/useGetConversations";
-import { getRandomEmoji } from "../../utils/emojis";
 import Conversation from "./Conversation";
+import { getRandomEmoji } from "../../utils/emojis";
 
 const Conversations = () => {
   const { loading, conversations } = useGetConversations();
+  console.log(conversations);
 
   return (
-    <div className="py-2 flex flex-col overflow-auto">
-      {conversations.map((conversation, idx) => (
+    <div className="overflow-y-scroll bg-[#212121] px-2 scrollbar-thumb-[#36373C] scrollbar-track-transparent scrollbar-thin scrollbar-thumb-rounded-full">
+      {conversations?.map((conversation, idx) => (
         <Conversation
           key={conversation._id}
           conversation={conversation}
@@ -19,4 +20,5 @@ const Conversations = () => {
     </div>
   );
 };
+
 export default Conversations;

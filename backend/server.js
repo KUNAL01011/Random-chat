@@ -7,12 +7,19 @@ import messageRouter from './routes/message.route.js';
 import cookieParser from 'cookie-parser';
 import userRouter from './routes/user.route.js';
 import { app, server } from './socket/socket.js';
+import { v2 as cloudinary } from "cloudinary";
 
 dotenv.config();
 
 const PORT = process.env.PORT || 5000;
 
 const __dirname = path.resolve();
+
+cloudinary.config({
+	cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
+	api_key: process.env.CLOUDINARY_API_KEY,
+	api_secret: process.env.CLOUDINARY_API_SECRET,
+});
 
 //middlewares
 app.use(express.json());

@@ -32,7 +32,7 @@ const uploadOnCloudinary = async (localFilePath) => {
 const destroyOnCloudinary = async (imgPublicId) => {
   try {
     if(!imgPublicId) return null;
-    cloudinary.uploader.destroy(imgPublicId);
+    cloudinary.uploader.destroy(`web_chat_usersPhoto/${imgPublicId}`);
     return;
   } catch (error) {
     return null;
