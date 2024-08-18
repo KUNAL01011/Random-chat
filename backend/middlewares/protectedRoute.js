@@ -29,7 +29,6 @@ const protectedRoute = async (req,res,next) => {
         next();
 
     } catch (error) {
-        console.log("Error in protectedRoute middleware : ",error.message);
         res.status(500).json({error:"Internal server error"});
     }
 }

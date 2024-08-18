@@ -7,5 +7,4 @@ const userRouter = express.Router();
 
 userRouter.get('/',protectedRoute,getUsersForSidebar);
 userRouter.put('/update-profile',protectedRoute,upload.single("profilePic"),updateUserProfile);
-
 export default userRouter;

@@ -4,7 +4,6 @@ import { getRandomEmoji } from "../../utils/emojis";
 
 const Conversations = () => {
   const { loading, conversations } = useGetConversations();
-  console.log(conversations);
 
   return (
     <div className="overflow-y-scroll bg-[#212121] px-2 scrollbar-thumb-[#36373C] scrollbar-track-transparent scrollbar-thin scrollbar-thumb-rounded-full">
